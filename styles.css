@@ -883,7 +883,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   background: var(--cream);
 }
 
-.project--sasasi {
+.project--asasi {
   background: var(--orange);
   border-top: var(--line);
   border-bottom: var(--line);
@@ -909,7 +909,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   background: var(--orange);
 }
 
-.project--sasasi .project__orbit {
+.project--asasi .project__orbit {
   right: -220px;
   bottom: 5%;
   background: var(--yellow);
@@ -942,7 +942,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   transform: rotate(-6deg);
 }
 
-.project--sasasi .project__index {
+.project--asasi .project__index {
   background: var(--cream);
 }
 
@@ -989,7 +989,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   transform: rotate(-2deg);
 }
 
-.project--sasasi .project__arabic {
+.project--asasi .project__arabic {
   background: var(--ink);
   color: var(--cream);
   box-shadow: 3px 3px 0 var(--cream);
@@ -1105,7 +1105,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   transform: rotate(4deg);
 }
 
-.project--sasasi .project__tag {
+.project--asasi .project__tag {
   background: var(--ink);
   color: var(--cream);
   box-shadow: 4px 4px 0 var(--cream);
@@ -1159,7 +1159,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   line-height: 1.7;
 }
 
-.project--sasasi .tag-list li {
+.project--asasi .tag-list li {
   background: rgba(255, 246, 227, .3);
 }
 
@@ -1183,7 +1183,7 @@ h1, h2, h3, h4, p, figure, ul, ol {
   color: var(--orange-deep);
 }
 
-.project--sasasi .text-link:hover,
+.project--asasi .text-link:hover,
 .project--oppenheimer .text-link:hover {
   color: var(--cream);
 }
@@ -1218,11 +1218,11 @@ h1, h2, h3, h4, p, figure, ul, ol {
   transform: rotate(-6deg);
 }
 
-.project--sasasi .project__doodle--a {
+.project--asasi .project__doodle--a {
   color: var(--cream);
 }
 
-.project--sasasi .project__doodle--b {
+.project--asasi .project__doodle--b {
   right: 5%;
   bottom: 6%;
   left: auto;
@@ -2538,7 +2538,7 @@ html.js [data-reveal].is-visible {
     left: -180px;
   }
 
-  .project--sasasi .project__orbit {
+  .project--asasi .project__orbit {
     right: -180px;
   }
 

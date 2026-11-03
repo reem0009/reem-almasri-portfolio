@@ -54,8 +54,8 @@ GitHub Pages serves the `main` branch from the repository root. The included `.n
 │   ├── avatar.webp
 │   ├── deheiyya-cover.webp
 │   ├── deheiyya-mood.webp
-│   ├── sasasi-cover.webp
-│   ├── sasasi-mobile.webp
+│   ├── asasi-cover.webp
+│   ├── asasi-mobile.webp
 │   ├── og-image.png
 │   └── reem-almasri-cv.pdf
 ├── .nojekyll
@@ -74,5 +74,5 @@ GitHub Pages serves the `main` branch from the repository root. The included `.n
 - Email: [duckquackquack107@gmail.com](mailto:duckquackquack107@gmail.com)
 - Behance: https://www.behance.net/reemomar25
 - DEHEIYYA case: https://www.behance.net/gallery/257949303/DEHEIYYA-Brand-Identity
-- SASASI case: https://www.behance.net/gallery/257992643/Full-company-marketing-strategy-content-plan
+- ASASI case: https://www.behance.net/gallery/257992643/Full-company-marketing-strategy-content-plan
 - Oppenheimer case: https://www.behance.net/gallery/257794007/OPPENHEIMER-VIDEO-EDITING-PROJECT
