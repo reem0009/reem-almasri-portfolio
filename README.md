@@ -35,6 +35,7 @@ GitHub Pages serves the `main` branch from the repository root. The included `.n
 | Colors, type scale, shadows, shapes | `styles.css` (`:root` tokens and project classes) |
 | Project covers and portrait | `assets/` |
 | Motion and menu behavior | `script.js` |
+| Intro sequence copy and pacing | `index.html` (`.intro`), `styles.css`, `script.js` |
 
 ### Before changing the site
 
@@ -48,7 +49,7 @@ GitHub Pages serves the `main` branch from the repository root. The included `.n
 .
 ├── index.html          # Content and page structure
 ├── styles.css          # Saffron/ink visual system and responsive layout
-├── script.js           # Menu, reveals, cursor, tilt, back-to-top
+├── script.js           # Intro sequence, menu, reveals, cursor, tilt, back-to-top
 ├── favicon.svg         # RA monogram
 ├── assets/
 │   ├── avatar.webp

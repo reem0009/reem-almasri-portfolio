@@ -21,7 +21,12 @@
   <meta name="twitter:image" content="https://reem0009.github.io/reem-almasri-portfolio/assets/og-image.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro-active');
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+2:wght@400..800&family=Baloo+Bhaijaan+2:wght@400..800&family=Nunito:wght@400..800&display=swap" rel="stylesheet">
@@ -47,6 +52,51 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="intro" aria-hidden="true">
+    <div class="intro__panel">
+      <div class="intro__top">
+        <p class="intro__meta intro__meta--left">
+          <span class="intro__mark">RA</span>
+          <span class="intro__meta-text">Reem AlMasri<small>Designer · Editor · Marketer</small></span>
+        </p>
+        <p class="intro__meta intro__meta--right">Portfolio 2026<small>Mecca · KSA</small></p>
+      </div>
+
+      <div class="intro__center">
+        <span class="intro__disc"></span>
+
+        <span class="intro__star intro__star--a"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span>
+        <span class="intro__star intro__star--b"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span>
+
+        <p class="intro__eyebrow">Portfolio 2026 <span aria-hidden="true">✦</span> Mecca, KSA</p>
+
+        <p class="intro__word">
+          <span class="intro__line intro__line--one">
+            <span class="intro__letter" style="--i:0">R</span><span class="intro__letter" style="--i:1">E</span><span class="intro__letter" style="--i:2">E</span><span class="intro__letter" style="--i:3">M</span>
+          </span>
+          <span class="intro__line intro__line--two">
+            <span class="intro__letter" style="--i:4">A</span><span class="intro__letter" style="--i:5">L</span><span class="intro__letter" style="--i:6">M</span><span class="intro__letter" style="--i:7">A</span><span class="intro__letter" style="--i:8">S</span><span class="intro__letter" style="--i:9">R</span><span class="intro__letter" style="--i:10">I</span>
+          </span>
+        </p>
+
+        <p class="intro__tagline">Designer <span aria-hidden="true">✦</span> Editor <span aria-hidden="true">✦</span> Marketer</p>
+      </div>
+
+      <div class="intro__footer">
+        <div class="intro__bar">
+          <span class="intro__dots" aria-hidden="true">
+            <span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span>
+          </span>
+          <span class="intro__percent" aria-hidden="true"><span data-intro-percent>00</span><i>%</i></span>
+        </div>
+        <p class="intro__statusline">
+          <span class="intro__status">Loading the good stuff</span>
+          <span class="intro__skip">Click to skip</span>
+        </p>
+      </div>
+    </div>
+  </div>
 
   <div class="grain" aria-hidden="true"></div>
   <div class="cursor" aria-hidden="true">
