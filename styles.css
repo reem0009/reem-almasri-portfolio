@@ -3297,6 +3297,10 @@ html.site-ready .scroll-cue {
     opacity: 1 !important;
   }
 
+  .opening__squiggle {
+    opacity: .45 !important;
+  }
+
   *,
   *::before,
   *::after {
