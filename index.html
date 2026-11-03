@@ -23,9 +23,6 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script>
     document.documentElement.classList.add('js');
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.classList.add('intro-active');
-    }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,50 +50,56 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="intro" aria-hidden="true">
-    <div class="intro__panel">
-      <div class="intro__top">
-        <p class="intro__meta intro__meta--left">
-          <span class="intro__mark">RA</span>
-          <span class="intro__meta-text">Reem AlMasri<small>Designer · Editor · Marketer</small></span>
-        </p>
-        <p class="intro__meta intro__meta--right">Portfolio 2026<small>Mecca · KSA</small></p>
+  <section class="opening" id="opening" aria-label="Portfolio opening">
+    <div class="opening__stage">
+      <div class="opening__sky" aria-hidden="true">
+        <span class="opening__halo"></span>
+        <span class="opening__ring"></span>
+        <span class="opening__squiggle"><svg viewBox="0 0 240 70"><use href="#squiggle"/></svg></span>
+
+        <span class="opening__star" style="top:13%;left:7%;width:clamp(24px,3.2vw,42px);color:var(--yellow);--sx:-26vw;--sy:-16vh;--sr:-96deg;--ss:1.4;--sd:.34s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span></span>
+        <span class="opening__star" style="top:21%;right:8%;width:clamp(20px,2.6vw,34px);color:var(--orange);--sx:24vw;--sy:-18vh;--sr:120deg;--ss:2;--sd:.42s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span></span>
+        <span class="opening__star" style="top:33%;left:16%;width:clamp(16px,2vw,26px);color:var(--ink);--sx:-30vw;--sy:12vh;--sr:-60deg;--ss:1.2;--sd:.58s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span></span>
+        <span class="opening__star" style="top:39%;right:19%;width:clamp(14px,1.8vw,22px);color:var(--green);--sx:28vw;--sy:-10vh;--sr:150deg;--ss:1.6;--sd:.5s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span></span>
+        <span class="opening__star" style="bottom:28%;left:10%;width:clamp(22px,3vw,38px);color:var(--maroon);--sx:-24vw;--sy:20vh;--sr:84deg;--ss:1.8;--sd:.66s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span></span>
+        <span class="opening__star" style="bottom:33%;right:12%;width:clamp(24px,3.4vw,44px);color:var(--yellow);--sx:26vw;--sy:16vh;--sr:-120deg;--ss:1.5;--sd:.38s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span></span>
+        <span class="opening__star" style="bottom:18%;left:30%;width:clamp(12px,1.6vw,20px);color:var(--orange);--sx:-16vw;--sy:24vh;--sr:200deg;--ss:2.4;--sd:.74s"><span class="opening__star-in"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span></span>
       </div>
 
-      <div class="intro__center">
-        <span class="intro__disc"></span>
-
-        <span class="intro__star intro__star--a"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span>
-        <span class="intro__star intro__star--b"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span>
-
-        <p class="intro__eyebrow">Portfolio 2026 <span aria-hidden="true">✦</span> Mecca, KSA</p>
-
-        <p class="intro__word">
-          <span class="intro__line intro__line--one">
-            <span class="intro__letter" style="--i:0">R</span><span class="intro__letter" style="--i:1">E</span><span class="intro__letter" style="--i:2">E</span><span class="intro__letter" style="--i:3">M</span>
-          </span>
-          <span class="intro__line intro__line--two">
-            <span class="intro__letter" style="--i:4">A</span><span class="intro__letter" style="--i:5">L</span><span class="intro__letter" style="--i:6">M</span><span class="intro__letter" style="--i:7">A</span><span class="intro__letter" style="--i:8">S</span><span class="intro__letter" style="--i:9">R</span><span class="intro__letter" style="--i:10">I</span>
-          </span>
+      <div class="opening__meta">
+        <p class="opening__who">
+          <span class="opening__meta-star"><svg viewBox="0 0 100 100"><use href="#star-5"/></svg></span>
+          <span class="opening__who-text">Reem AlMasri<small>(designer · editor · marketer)</small></span>
         </p>
-
-        <p class="intro__tagline">Designer <span aria-hidden="true">✦</span> Editor <span aria-hidden="true">✦</span> Marketer</p>
+        <p class="opening__year">
+          <span class="opening__meta-star"><svg viewBox="0 0 100 100"><use href="#star-4"/></svg></span>
+          <span class="opening__year-text">portfolio <strong>2026</strong><small>Mecca, KSA</small></span>
+        </p>
       </div>
 
-      <div class="intro__footer">
-        <div class="intro__bar">
-          <span class="intro__dots" aria-hidden="true">
-            <span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span><span class="intro__dot"></span>
-          </span>
-          <span class="intro__percent" aria-hidden="true"><span data-intro-percent>00</span><i>%</i></span>
+      <div class="opening__center">
+        <p class="opening__kicker">/ full-stack designer — art director /</p>
+
+        <p class="opening__word" role="img" aria-label="Portfolio">
+          <span class="opening__letter" style="--i:0;--dx:-30vw;--dy:-6vh;--rot:-12deg;--sc:1.2" aria-hidden="true">p</span><span class="opening__letter" style="--i:1;--dx:-21vw;--dy:10vh;--rot:8deg;--sc:.8" aria-hidden="true">o</span><span class="opening__letter" style="--i:2;--dx:-13vw;--dy:-13vh;--rot:-15deg;--sc:1.6" aria-hidden="true">r</span><span class="opening__letter" style="--i:3;--dx:-5vw;--dy:14vh;--rot:6deg;--sc:2.1" aria-hidden="true">t</span><span class="opening__letter" style="--i:4;--dx:3vw;--dy:-16vh;--rot:-7deg;--sc:.9" aria-hidden="true">f</span><span class="opening__letter" style="--i:5;--dx:11vw;--dy:11vh;--rot:11deg;--sc:1.7" aria-hidden="true">o</span><span class="opening__letter" style="--i:6;--dx:19vw;--dy:-9vh;--rot:-10deg;--sc:1.1" aria-hidden="true">l</span><span class="opening__letter" style="--i:7;--dx:26vw;--dy:13vh;--rot:9deg;--sc:2.3" aria-hidden="true">i</span><span class="opening__letter" style="--i:8;--dx:33vw;--dy:-7vh;--rot:-6deg;--sc:1.4" aria-hidden="true">o</span><span class="opening__letter opening__letter--mark" style="--i:9;--dx:39vw;--dy:18vh;--rot:16deg;--sc:2.5" aria-hidden="true">_</span>
+        </p>
+
+        <p class="opening__sub"><span class="opening__ar" lang="ar" dir="rtl">ريم المصري</span><span aria-hidden="true">✦</span>brands, campaigns &amp; edits from Mecca</p>
+      </div>
+
+      <div class="opening__bottom">
+        <div class="opening__bar">
+          <p class="opening__ticker" aria-hidden="true">
+            <span>brand identity ✦ campaigns ✦ content ✦ motion ✦ brand identity ✦ campaigns ✦ content ✦ motion ✦&nbsp;</span>
+          </p>
+          <a class="opening__go" href="#top">
+            <span>scroll to open</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m0 0 6-6m-6 6-6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <p class="intro__statusline">
-          <span class="intro__status">Loading the good stuff</span>
-          <span class="intro__skip">Click to skip</span>
-        </p>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="grain" aria-hidden="true"></div>
   <div class="cursor" aria-hidden="true">

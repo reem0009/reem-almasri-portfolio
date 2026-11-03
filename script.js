@@ -6,98 +6,38 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---------- Intro sequence ---------- */
-  const intro = document.querySelector('.intro');
+  /* ---------- Scroll opening ---------- */
+  const opening = document.querySelector('.opening');
+  const openingStage = opening ? opening.querySelector('.opening__stage') : null;
 
-  if (intro) {
-    if (reduceMotion) {
-      intro.remove();
-      document.documentElement.classList.remove('intro-active');
-    } else {
-      const dots = [...intro.querySelectorAll('.intro__dot')];
-      const percentEl = intro.querySelector('[data-intro-percent]');
-      const statusEl = intro.querySelector('.intro__status');
-      const locked = [...document.querySelectorAll('.skip-link, .site-header, main, .footer, .to-top')];
-      locked.forEach((el) => el.setAttribute('inert', ''));
+  if (opening && openingStage) {
+    let openingQueued = false;
+    let siteReady = false;
 
-      let finished = false;
-      let pageLoaded = document.readyState === 'complete';
-      let displayed = 0;
-      let rafId = 0;
-      const startedAt = performance.now();
-      const minimumTime = 1700;
+    const updateOpening = () => {
+      openingQueued = false;
+      const range = Math.max(1, opening.offsetHeight - openingStage.offsetHeight);
+      const scrolled = Math.min(range, Math.max(0, -opening.getBoundingClientRect().top));
+      const progress = scrolled / range;
+      opening.style.setProperty('--p', progress.toFixed(4));
 
-      const setProgress = (value) => {
-        if (percentEl) percentEl.textContent = String(Math.min(100, Math.floor(value))).padStart(2, '0');
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('is-on', value >= (index + 1) * 10 - .5);
-        });
-      };
-
-      const finish = (instant = false) => {
-        if (finished) return;
-        finished = true;
-        window.cancelAnimationFrame(rafId);
-        setProgress(100);
-        if (statusEl) statusEl.textContent = instant ? 'Jumping in' : 'Ready';
-        intro.classList.add('is-done');
+      if (!siteReady && progress > .985) {
+        siteReady = true;
         document.documentElement.classList.add('site-ready');
-        if (instant) intro.classList.add('is-instant');
+      }
+    };
 
-        window.setTimeout(() => {
-          intro.classList.add('is-leaving');
-        }, instant ? 0 : 260);
+    const queueOpening = () => {
+      if (openingQueued) return;
+      openingQueued = true;
+      window.requestAnimationFrame(updateOpening);
+    };
 
-        window.setTimeout(() => {
-          intro.remove();
-          document.documentElement.classList.remove('intro-active');
-          locked.forEach((el) => el.removeAttribute('inert'));
-        }, instant ? 500 : 1180);
-      };
+    window.addEventListener('scroll', queueOpening, { passive: true });
+    window.addEventListener('resize', queueOpening);
+    window.addEventListener('pageshow', queueOpening);
 
-      const skip = (event) => {
-        if (event.type === 'keydown' && !['Escape', 'Enter', ' '].includes(event.key)) return;
-        finish(true);
-        intro.removeEventListener('click', skip);
-        document.removeEventListener('keydown', skip);
-      };
-
-      intro.addEventListener('click', skip);
-      document.addEventListener('keydown', skip);
-      intro.classList.add('is-running');
-
-      const easeInOut = (t) => (t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-
-      const tick = (now) => {
-        if (finished) return;
-        const t = Math.min(1, (now - startedAt) / minimumTime);
-        const ceiling = pageLoaded ? 100 : 93;
-        const target = Math.min(ceiling, easeInOut(t) * 100);
-        displayed += (target - displayed) * .18;
-        setProgress(displayed);
-
-        if (pageLoaded && ((t >= 1 && displayed > 99.2) || now - startedAt > 2600)) {
-          finish();
-          return;
-        }
-        if (now - startedAt > 3600) {
-          finish();
-          return;
-        }
-        rafId = window.requestAnimationFrame(tick);
-      };
-
-      rafId = window.requestAnimationFrame(tick);
-
-      window.addEventListener('load', () => {
-        pageLoaded = true;
-      }, { once: true });
-
-      window.setTimeout(() => {
-        pageLoaded = true;
-        finish();
-      }, 7000);
-    }
+    updateOpening();
   }
 
   /* ---------- Mobile menu ---------- */
@@ -283,7 +223,8 @@
     toTop.tabIndex = -1;
 
     const updateToTop = () => {
-      const show = window.scrollY > 700;
+      const threshold = opening ? opening.offsetHeight : 700;
+      const show = window.scrollY > threshold;
       toTop.classList.toggle('is-visible', show);
       toTop.tabIndex = show ? 0 : -1;
     };
