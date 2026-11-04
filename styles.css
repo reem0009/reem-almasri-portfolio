@@ -722,53 +722,45 @@ h1, h2, h3, h4, p, figure, ul, ol {
   line-height: 1;
 }
 
-.hero__spark,
-.hero__squiggle {
+.hero__deco {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
-.hero__spark svg,
-.hero__squiggle svg {
+.hero__deco img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.hero__spark--1 {
-  top: 18%;
-  left: 7%;
-  width: 50px;
-  height: 50px;
-  color: var(--yellow);
-  transform: rotate(12deg);
+.hero__deco--vine {
+  top: 1%;
+  left: clamp(-46px, -2vw, -12px);
+  width: clamp(130px, 16vw, 230px);
+  transform: rotate(5deg);
+}
+
+.hero__deco--star {
+  top: 12%;
+  right: 11%;
+  width: clamp(58px, 6.5vw, 96px);
+  transform: rotate(10deg);
   animation: float 6s ease-in-out infinite;
 }
 
-.hero__spark--2 {
-  top: 25%;
-  right: 10%;
-  width: 36px;
-  height: 36px;
-  color: var(--orange);
-  transform: rotate(-8deg);
+.hero__deco--flower {
+  bottom: 14%;
+  left: 7%;
+  width: clamp(36px, 4vw, 60px);
+  transform: rotate(-12deg);
 }
 
-.hero__spark--3 {
-  bottom: 21%;
-  left: 15%;
-  width: 26px;
-  height: 26px;
-  color: var(--ink);
-}
-
-.hero__squiggle {
-  top: 33%;
-  left: 3%;
-  width: 160px;
-  color: var(--ink);
-  opacity: .75;
-  transform: rotate(-8deg);
+.hero__deco--cursor {
+  bottom: 27%;
+  left: 13%;
+  width: clamp(44px, 5vw, 68px);
+  transform: rotate(118deg);
 }
 
 .scroll-cue {
@@ -847,10 +839,49 @@ h1, h2, h3, h4, p, figure, ul, ol {
 }
 
 .section-head {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
   padding: clamp(80px, 12vw, 140px) var(--gutter) clamp(40px, 6vw, 60px);
   text-align: center;
+}
+
+.section-head > *:not(.work__deco) {
+  position: relative;
+  z-index: 1;
+}
+
+.work__deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.work__deco img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work__deco--windows {
+  z-index: 2;
+  top: clamp(40px, 6vw, 80px);
+  right: max(2%, calc(50% - 640px));
+  width: clamp(180px, 21vw, 300px);
+  transform: rotate(3deg);
+}
+
+.banner-divider {
+  display: flex;
+  justify-content: center;
+  padding: clamp(30px, 5vw, 56px) var(--gutter);
+  background: var(--cream);
+}
+
+.banner-divider img {
+  width: min(520px, 84vw);
+  height: auto;
+  transform: rotate(-2deg);
+  filter: drop-shadow(6px 6px 0 rgba(43, 26, 19, .1));
 }
 
 .section-head .eyebrow {
@@ -1188,53 +1219,71 @@ h1, h2, h3, h4, p, figure, ul, ol {
   color: var(--cream);
 }
 
-.project__doodle {
+.project .project__doodle {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
 }
 
-.project__doodle svg {
+.project .project__doodle img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.project__doodle--a {
-  top: 15%;
+.project .project__doodle--a {
+  top: 14%;
   right: 6%;
-  width: 52px;
-  height: 52px;
-  color: var(--yellow);
+  width: clamp(40px, 4.5vw, 62px);
   transform: rotate(12deg);
   animation: float 6s ease-in-out infinite;
 }
 
-.project__doodle--b {
-  bottom: 10%;
-  left: 4%;
-  width: 150px;
-  height: 44px;
-  color: var(--orange-deep);
-  transform: rotate(-6deg);
-}
-
 .project--asasi .project__doodle--a {
-  color: var(--cream);
-}
-
-.project--asasi .project__doodle--b {
-  right: 5%;
-  bottom: 6%;
-  left: auto;
-  width: 110px;
-  color: var(--ink);
+  top: auto;
+  bottom: 11%;
+  right: 8%;
+  transform: rotate(-10deg);
 }
 
 .project--oppenheimer .project__doodle--a {
-  top: 11%;
-  right: auto;
-  left: 7%;
-  color: var(--orange);
+  top: 10%;
+  right: 7%;
+  left: auto;
+  transform: rotate(10deg);
+}
+
+.project .project__note {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.project .project__note img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project--deheiyya .project__note {
+  top: 8%;
+  left: 4%;
+  width: clamp(140px, 16vw, 220px);
+  transform: rotate(-6deg);
+}
+
+.project--asasi .project__note {
+  top: 15%;
+  right: 5%;
+  width: clamp(66px, 7.5vw, 100px);
+  transform: rotate(9deg);
+}
+
+.project--oppenheimer .project__note {
+  right: 5%;
+  bottom: 12%;
+  width: clamp(62px, 7vw, 94px);
+  transform: rotate(-8deg);
 }
 
 /* Oppenheimer poster */
@@ -1476,6 +1525,46 @@ h1, h2, h3, h4, p, figure, ul, ol {
   font-size: 1.05rem;
   line-height: 1.5;
   transform: rotate(7deg);
+}
+
+.about__deco {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.about__deco img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about__deco--sprout {
+  top: -3%;
+  left: -3%;
+  width: clamp(72px, 8vw, 110px);
+  transform: rotate(-10deg);
+}
+
+.about__deco--bush {
+  bottom: -3%;
+  left: -9%;
+  width: clamp(150px, 19vw, 250px);
+  transform: rotate(2deg);
+}
+
+.about__deco--tomato {
+  right: 3%;
+  bottom: 5%;
+  width: clamp(60px, 7vw, 92px);
+  transform: rotate(8deg);
+}
+
+.about__deco--cat {
+  top: 38%;
+  right: -3%;
+  width: clamp(56px, 6vw, 84px);
+  transform: rotate(-7deg);
 }
 
 .rotator.rotator--about {
@@ -2024,34 +2113,39 @@ h1, h2, h3, h4, p, figure, ul, ol {
   font-size: 1rem;
 }
 
-.contact__star {
+.contact__deco {
   position: absolute;
   z-index: 1;
   pointer-events: none;
 }
 
-.contact__star svg {
+.contact__deco img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.contact__star--a {
-  top: 12%;
-  left: 6%;
-  width: 46px;
-  height: 46px;
-  color: var(--cream);
-  transform: rotate(-10deg);
+.contact__deco--bubble {
+  top: 2%;
+  left: 2%;
+  width: clamp(190px, 23vw, 330px);
+  transform: rotate(-6deg);
+}
+
+.contact__deco--ghost {
+  right: 5%;
+  bottom: 9%;
+  width: clamp(62px, 7vw, 98px);
+  transform: rotate(10deg);
   animation: float 6s ease-in-out infinite;
 }
 
-.contact__star--b {
-  right: 7%;
-  bottom: 12%;
-  width: 34px;
-  height: 34px;
-  color: var(--ink);
-  transform: rotate(14deg);
+.contact__deco--cursor {
+  z-index: 3;
+  top: 56%;
+  left: 7%;
+  width: clamp(48px, 5.5vw, 76px);
+  transform: rotate(115deg);
 }
 
 /* =========================
@@ -2305,10 +2399,6 @@ html.js [data-reveal].is-visible {
     width: min(350px, 40vw);
   }
 
-  .hero__spark--2 {
-    color: var(--yellow);
-  }
-
   .hero__title {
     font-size: clamp(3.5rem, 14.5vw, 7.2rem);
   }
@@ -2335,20 +2425,22 @@ html.js [data-reveal].is-visible {
     width: 88px;
   }
 
-  .hero__spark--1 {
-    top: 13%;
+  .hero__deco--vine {
+    width: clamp(100px, 17vw, 160px);
+    left: -34px;
+  }
+
+  .hero__deco--star {
+    top: 9%;
+    right: 6%;
+  }
+
+  .hero__deco--flower {
+    bottom: 12%;
     left: 4%;
-    width: 40px;
-    height: 40px;
   }
 
-  .hero__spark--2 {
-    top: 20%;
-    right: 5%;
-  }
-
-  .hero__spark--3,
-  .hero__squiggle,
+  .hero__deco--cursor,
   .scroll-cue {
     display: none;
   }
@@ -2356,6 +2448,10 @@ html.js [data-reveal].is-visible {
   .project {
     min-height: auto;
     padding: 80px var(--gutter);
+  }
+
+  .work__deco--windows {
+    display: none;
   }
 
   .project__frame {
@@ -2378,10 +2474,6 @@ html.js [data-reveal].is-visible {
 
   .project--oppenheimer .project__frame:hover {
     box-shadow: 16px 16px 0 var(--orange);
-  }
-
-  .project__doodle--b {
-    display: none;
   }
 
   .service-grid {
@@ -2522,11 +2614,25 @@ html.js [data-reveal].is-visible {
     font-size: .95rem;
   }
 
-  .project__doodle--a {
-    top: 9%;
+  .project .project__doodle--a {
+    top: 7%;
     right: 3%;
     width: 38px;
-    height: 38px;
+  }
+
+  .project--deheiyya .project__note {
+    top: 6%;
+    width: 120px;
+  }
+
+  .project--asasi .project__note {
+    top: 12%;
+    width: 58px;
+  }
+
+  .project--oppenheimer .project__note {
+    bottom: 9%;
+    width: 54px;
   }
 
   .project__orbit {
@@ -2698,6 +2804,27 @@ html.js [data-reveal].is-visible {
     min-height: 370px;
   }
 
+  .about__deco--bush {
+    width: 140px;
+    left: -6%;
+  }
+
+  .about__deco--tomato {
+    width: 54px;
+  }
+
+  .about__deco--cat {
+    width: 48px;
+  }
+
+  .contact__deco--bubble {
+    width: 150px;
+  }
+
+  .contact__deco--cursor {
+    display: none;
+  }
+
   .about__sticker {
     top: 30%;
     font-size: .82rem;
@@ -2808,7 +2935,7 @@ html.js [data-reveal].is-visible {
   animation: opening-pop .7s var(--ease) var(--sd, .4s) both;
 }
 
-.opening__star svg {
+.opening__star img {
   display: block;
   width: 100%;
   height: auto;
@@ -2875,14 +3002,14 @@ html.js [data-reveal].is-visible {
   color: var(--green);
 }
 
-.opening__meta-star svg {
+.opening__meta-star img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(2px 2px 0 var(--ink));
+  filter: drop-shadow(1.5px 1.5px 0 var(--ink));
   transform: rotate(-8deg);
 }
 
-.opening__year .opening__meta-star svg {
+.opening__year .opening__meta-star img {
   transform: rotate(10deg);
 }
 
